@@ -21,3 +21,146 @@ class Main {
         
     }
 }
+
+/* 
+# Java Program to Reverse an Array – Notes
+
+```java
+import java.util.Scanner;
+```
+- Imports the Scanner class from the `java.util` package.
+- Used to take input from the user.
+
+```java
+class Main {
+```
+- Defines a class named `Main`.
+- All Java program code is written inside a class.
+
+```java
+public static void main(String[] args) {
+```
+- The main method is the entry point of the Java program.
+- `public`: Accessible from outside the class.
+- `static`: Can be called without creating an object.
+- `void`: Does not return a value.
+- `String[] args`: Accepts command-line arguments.
+
+```java
+Scanner sc = new Scanner(System.in);
+```
+- Creates a Scanner object named `sc`.
+- `System.in` reads input from the keyboard.
+- `new` creates a new Scanner object.
+
+```java
+int n = sc.nextInt();
+```
+- Reads an integer from the user.
+- Stores the array size in variable `n`.
+- `nextInt()` reads the next integer input.
+
+```java
+int[] a = new int[n];
+```
+- Creates an integer array named `a` of size `n`.
+- Array indices start from `0`.
+- For an array of size `5`, valid indices are `0` to `4`.
+- Integer array elements are initialized to `0` by default.
+
+```java
+for (int k = 0; k < n; k++) {
+    a[k] = sc.nextInt();
+}
+```
+- Reads `n` integer elements into the array.
+- `int k = 0`: Initializes the loop counter.
+- `k < n`: Continues the loop while `k` is less than `n`.
+- `k++`: Increments `k` by `1` after each iteration.
+- `a[k] = sc.nextInt()`: Reads an integer and stores it at index `k`.
+
+```java
+int i = 0, j = n - 1;
+```
+- Initializes two pointers for reversing the array.
+- `i = 0`: Points to the first element.
+- `j = n - 1`: Points to the last element.
+- `n - 1` is the last index because array indexing starts at `0`.
+
+```java
+while (i <= j) {
+```
+- Repeats the loop while `i` is less than or equal to `j`.
+- Stops when the two pointers cross.
+- The loop reverses the array by swapping elements from opposite ends.
+
+```java
+int temp = a[i];
+```
+- Stores the element at index `i` in a temporary variable.
+- Prevents the original value from being lost during swapping.
+
+```java
+a[i] = a[j];
+```
+- Copies the element at index `j` into index `i`.
+
+```java
+a[j] = temp;
+```
+- Copies the saved value from `temp` into index `j`.
+- These three statements swap the elements at indices `i` and `j`.
+
+```java
+i++;
+```
+- Increments the left pointer by `1`.
+- Moves `i` toward the right side of the array.
+
+```java
+j--;
+```
+- Decrements the right pointer by `1`.
+- Moves `j` toward the left side of the array.
+
+```java
+for (int k = 0; k < n; k++) {
+    System.out.print(" " + a[k]);
+}
+```
+- Iterates through the reversed array.
+- `System.out.print()` displays the elements on the same line.
+- `" " + a[k]` adds a space before each element.
+
+## Example
+
+Input:
+```text
+5
+10 20 30 40 50
+```
+
+Output:
+```text
+50 40 30 20 10
+```
+
+## Logic Summary
+
+1. Read the array size.
+2. Create an array and read its elements.
+3. Initialize `i` to the first index and `j` to the last index.
+4. Swap `a[i]` and `a[j]` using a temporary variable.
+5. Increment `i` and decrement `j`.
+6. Repeat until the pointers cross.
+7. Print the reversed array.
+
+## Important Concepts
+
+- **Array:** Stores multiple values of the same data type.
+- **Index:** Position of an element in an array, starting from `0`.
+- **Two-pointer technique:** Uses two indices to process elements from opposite ends.
+- **Swapping:** Exchanges two values using a temporary variable.
+- **Time complexity:** `O(n)` — each element is processed a constant number of times.
+- **Auxiliary space complexity:** `O(1)` — reversal uses only a temporary variable and two pointers, excluding the input array.
+*/
